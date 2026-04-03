@@ -10,27 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: DEBUG repo contents
-        run: |
-          echo "PWD:"
-          pwd
-          echo "FILES:"
-          ls -la
-          echo "BOT.PY CONTENT:"
-          cat bot.py
-
-      - name: Install Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests feedparser
 
       - name: Run bot
         env:
           PYTHONUNBUFFERED: "1"
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         run: python bot.py
