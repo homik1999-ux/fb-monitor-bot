@@ -6,20 +6,61 @@ print("START BOTA", flush=True)
 TOKEN = os.environ["TELEGRAM_TOKEN"]
 CHAT_ID = "8664071476"
 RSS_FEEDS = [
-    "https://rss.app/feeds/EYUXQBM0N6GWpF1X.xml","https://rss.app/feeds/aeBHmOEXiFgcpoRn.xml","https://rss.app/feeds/2xT8AdXui6fknvR4.xml",
+    "https://rss.app/feeds/EYUXQBM0N6GWpF1X.xml","https://rss.app/feeds/aeBHmOEXiFgcpoRn.xml","https://rss.app/feeds/2xT8AdXui6fknvR4.xml","https://rss.app/feeds/pPYNvbbRwQkSGdru.xml",
 ]
 KEYWORDS = [
-    "mitsubishi hr","mitsubishi ap","mitsubishi ay","mitsubishi ln",
-    "mitsubishi ef","mitsubishi slz","mitsubishi mlz","mitsubishi mfz",
-    "mitsubishi sez","mitsubishi suz","mitsubishi ft","mitsubishi rw",
-    "mitsubishi mxz","mitsubishi zubadan","mitsubishi hyper heating",
-    "zubadan","hyper heating",
-    "daikin sensira","daikin perfera","daikin comfora","daikin stylish",
-    "sensira daikin","perfera daikin","comfora daikin","stylish daikin",
-    "daikin multi","daikin multisplit","agregat daikin multi",
-    "toshiba seiya","toshiba shorai","toshiba daiseikai","toshiba haori",
-    "seiya toshiba","shorai toshiba","daiseikai toshiba","haori toshiba",
-    "toshiba multi","toshiba multisplit","agregat toshiba multi","mitsubishi", "daikin", "toshiba",
+    # === MITSUBISHI ELECTRIC - serie ścienne ===
+    "mitsubishi hr", "mitsubishi ap", "mitsubishi ay", "mitsubishi ln",
+    "mitsubishi ef", "mitsubishi slz", "mitsubishi mlz", "mitsubishi mfz",
+    "mitsubishi sez", "mitsubishi suz", "mitsubishi ft", "mitsubishi rw",
+    "mitsubishi mxz", "msz-hr", "msz-ap", "msz-ay", "msz-ln", "msz-ef",
+    "muz-hr", "muz-ap", "muz-ay", "muz-ln", "muz-ef",
+    # Mitsubishi - technologie
+    "mitsubishi zubadan", "mitsubishi hyper heating",
+    "zubadan", "hyper heating",
+    # Mitsubishi - pompy ciepła
+    "ecodan", "mitsubishi ecodan",
+    "mitsubishi mr.slim", "mr slim mitsubishi", "mr.slim",
+    # Mitsubishi - multisplit
+    "mitsubishi mxz", "mxz mitsubishi", "mitsubishi multi",
+    "mitsubishi multisplit", "agregat mitsubishi multi",
+
+    # === DAIKIN - serie ścienne ===
+    "daikin sensira", "daikin perfera", "daikin comfora", "daikin stylish",
+    "daikin emura", "daikin ururu", "daikin sarara", "daikin ftxz",
+    "sensira daikin", "perfera daikin", "comfora daikin", "stylish daikin",
+    "emura daikin", "ururu sarara",
+    # Daikin - kody modeli
+    "ftxm daikin", "ftxa daikin", "ftxp daikin", "ftxj daikin",
+    "rxm daikin", "rxa daikin", "rxp daikin", "rxj daikin",
+    # Daikin - multisplit
+    "daikin multi", "daikin multisplit", "agregat daikin multi",
+    "daikin 2mxm", "daikin 3mxm", "daikin 4mxm", "daikin 5mxm",
+    # Daikin - pompy ciepła
+    "daikin altherma", "altherma daikin", "altherma",
+    # Daikin - technologie
+    "daikin bluevolution", "daikin nepura", "nepura daikin",
+    "daikin siesta", "sensira siesta",
+    # Daikin - VRV
+    "daikin vrv", "vrv daikin",
+
+    # === TOSHIBA - serie ścienne ===
+    "toshiba seiya", "toshiba shorai", "toshiba daiseikai", "toshiba haori",
+    "seiya toshiba", "shorai toshiba", "daiseikai toshiba", "haori toshiba",
+    "toshiba shorai edge", "shorai edge", "shorai edge toshiba",
+    "toshiba suzumi", "suzumi toshiba",
+    "toshiba seiya classic", "seiya classic",
+    "toshiba daiseikai 10", "daiseikai 10",
+    # Toshiba - multisplit
+    "toshiba multi", "toshiba multisplit", "agregat toshiba multi",
+    "toshiba ras", "ras-b toshiba",
+    # Toshiba - pompy ciepła
+    "toshiba estia", "estia toshiba", "estia",
+
+    # === OGÓLNE nazwy marek (jako backup) ===
+    "mitsubishi electric", "mitsubishi",
+    "daikin",
+    "toshiba hvac", "toshiba",
 ]
 SEEN_FILE = "seen_posts.json"
 def load_seen():
