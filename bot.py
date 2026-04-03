@@ -5,7 +5,8 @@ import os
 
 print("START BOTA", flush=True)
 
-TOKEN = os.environ["TELEGRAM_TOKEN"]
+TOKEN = os.environ["
+8745828890:AAGhEwYjPsMu_i6eULDG-6tfTqMVIjkN9Mo"]
 CHAT_ID = "8664071476"
 
 RSS_FEEDS = [
