@@ -1,9 +1,9 @@
 name: FB monitor bot
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/10 * * * *"
-  workflow_dispatch:
 
 jobs:
   run-bot:
@@ -11,6 +11,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Show files
+        run: ls -la
 
       - name: Install Python
         uses: actions/setup-python@v5
