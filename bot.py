@@ -1,14 +1,21 @@
 import requests
 
-print("START")
+print("START SKRYPTU")
 
-TOKEN = "8745828890:AAH1yLOCo4Yksy6a9mFhpGxUt6LZQoEohIk"
+TOKEN = "8745828890:AAFx0jw6fNFTLmuVZLD211oq0nZ8bbTrQw0"
 CHAT_ID = "8664071476"
 
+url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+
 response = requests.post(
-    f"https://api.telegram.org/bot{TOKEN}/sendMessage",
-    data={"chat_id": CHAT_ID, "text": "Test z GitHub Actions ✅"}
+    url,
+    data={
+        "chat_id": CHAT_ID,
+        "text": "Test z GitHub Actions ✅"
+    }
 )
 
-print(response.text)
-print("KONIEC")
+print("STATUS:", response.status_code)
+print("ODPOWIEDŹ:", response.text)
+
+print("KONIEC SKRYPTU")
