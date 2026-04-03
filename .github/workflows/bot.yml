@@ -25,10 +25,11 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         run: python bot.py
 
-      - name: Zapisz seen_posts.json do repo
+  - name: Zapisz seen_posts.json do repo
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+          git pull --rebase
           git add seen_posts.json
           git diff --staged --quiet || git commit -m "update seen_posts"
           git push
