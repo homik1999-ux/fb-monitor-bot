@@ -6,7 +6,7 @@ print("START BOTA", flush=True)
 TOKEN = os.environ["TELEGRAM_TOKEN"]
 CHAT_ID = "8664071476"
 RSS_FEEDS = [
-    "https://rss.app/feeds/EYUXQBM0N6GWpF1X.xml",
+    "https://rss.app/feeds/EYUXQBM0N6GWpF1X.xml","https://rss.app/feeds/aeBHmOEXiFgcpoRn.xml",
 ]
 KEYWORDS = [
     "mitsubishi hr","mitsubishi ap","mitsubishi ay","mitsubishi ln",
