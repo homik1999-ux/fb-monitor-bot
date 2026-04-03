@@ -10,12 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Show files
-        run: ls -la
+      - name: DEBUG repo contents
+        run: |
+          echo "PWD:"
+          pwd
+          echo "FILES:"
+          ls -la
+          echo "BOT.PY CONTENT:"
+          cat bot.py
 
       - name: Install Python
         uses: actions/setup-python@v5
@@ -26,4 +31,6 @@ jobs:
         run: pip install requests
 
       - name: Run bot
-        run: cat bot.py
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python bot.py
