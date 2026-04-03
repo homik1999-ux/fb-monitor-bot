@@ -11,7 +11,7 @@ KEYWORDS = [
 ]
 
 GROUPS = [
-    "https://facebook.com/groups/TWOJA_GRUPA"
+    "https://www.facebook.com/groups/983446936989580"
 ]
 
 
