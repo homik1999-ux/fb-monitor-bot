@@ -26,4 +26,4 @@ jobs:
         run: pip install requests
 
       - name: Run bot
-        run: python bot.py
+        run: cat bot.py
