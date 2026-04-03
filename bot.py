@@ -2,7 +2,7 @@ import requests
 
 print("START")
 
-TOKEN = "TWÓJ_TOKEN"
+TOKEN = "8745828890:AAFx0jw6fNFTLmuVZLD211oq0nZ8bbTrQw0"
 CHAT_ID = "8664071476"
 
 response = requests.post(
