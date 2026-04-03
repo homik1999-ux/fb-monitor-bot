@@ -1,6 +1,8 @@
-import requests
 
-print("START SKRYPTU")
+import requests
+import sys
+
+print("START SKRYPTU", flush=True)
 
 TOKEN = "8745828890:AAFx0jw6fNFTLmuVZLD211oq0nZ8bbTrQw0"
 CHAT_ID = "8664071476"
@@ -15,7 +17,9 @@ response = requests.post(
     }
 )
 
-print("STATUS:", response.status_code)
-print("ODPOWIEDŹ:", response.text)
+print("STATUS:", response.status_code, flush=True)
+print("ODPOWIEDŹ:", response.text, flush=True)
 
-print("KONIEC SKRYPTU")
+sys.stdout.flush()
+
+print("KONIEC SKRYPTU", flush=True)
