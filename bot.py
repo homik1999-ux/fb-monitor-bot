@@ -1,14 +1,11 @@
-
 import requests
 import feedparser
 import json
 import os
-from datetime import datetime
 
 print("START BOTA", flush=True)
 
-# ============ KONFIGURACJA ============
-TOKEN = os.environ["8745828890:AAFx0jw6fNFTLmuVZLD211oq0nZ8bbTrQw0"]
+TOKEN = os.environ["TELEGRAM_TOKEN"]
 CHAT_ID = "8664071476"
 
 RSS_FEEDS = [
@@ -30,7 +27,6 @@ KEYWORDS = [
 ]
 
 SEEN_FILE = "seen_posts.json"
-# ======================================
 
 def load_seen():
     if os.path.exists(SEEN_FILE):
@@ -58,7 +54,6 @@ def check_keywords(text):
             return kw
     return None
 
-# ============ GŁÓWNA LOGIKA ============
 seen = load_seen()
 new_seen = set()
 found_count = 0
@@ -89,12 +84,11 @@ for feed_url in RSS_FEEDS:
                 f"🔗 {link}"
             )
             send_telegram(msg)
-            print(f"Wysłano powiadomienie: {matched_kw}", flush=True)
+            print(f"Wysłano: {matched_kw}", flush=True)
 
-# Zapisz tylko nowe posty (max 500 żeby plik nie rósł w nieskończoność)
-all_seen = (seen | new_seen)
+all_seen = seen | new_seen
 if len(all_seen) > 500:
-    all_seen = new_seen  # reset do tylko aktualnych
+    all_seen = new_seen
 save_seen(all_seen)
 
 print(f"Znaleziono dopasowań: {found_count}", flush=True)
