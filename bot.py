@@ -1,14 +1,27 @@
-import time
+import requests
 
-KEYWORDS = ["klimatyzacja", "montaż klimy", "klimatyzator"]
+TOKEN = "TU_WKLEJ_TOKEN"
+CHAT_ID = "8664071476"
+
+KEYWORDS = [
+    "klimatyzacja",
+    "montaż klimy",
+    "klimatyzator",
+    "pompa ciepła"
+]
 
 GROUPS = [
     "https://facebook.com/groups/TWOJA_GRUPA"
 ]
 
-print("Bot uruchomiony")
 
-for group in GROUPS:
-    print("Sprawdzam:", group)
+def send_telegram(msg):
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    data = {
+        "chat_id": CHAT_ID,
+        "text": msg
+    }
+    requests.post(url, data=data)
 
-print("Gotowe")
+
+send_telegram("Bot działa ✅ Sprawdzanie grup uruchomione.")
