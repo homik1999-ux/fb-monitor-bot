@@ -23,7 +23,7 @@ KEYWORDS = [
     "daikin multi","daikin multisplit","agregat daikin multi",
     "toshiba seiya","toshiba shorai","toshiba daiseikai","toshiba haori",
     "seiya toshiba","shorai toshiba","daiseikai toshiba","haori toshiba",
-    "toshiba multi","toshiba multisplit","agregat toshiba multi"
+    "toshiba multi","toshiba multisplit","agregat toshiba multi","mitsubishi", "daikin", "toshiba",
 ]
 
 SEEN_FILE = "seen_posts.json"
