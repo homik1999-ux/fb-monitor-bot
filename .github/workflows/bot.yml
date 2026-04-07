@@ -15,6 +15,14 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Wczytaj cache seen_posts
+        uses: actions/cache@v4
+        with:
+          path: seen_posts.json
+          key: seen-posts-${{ github.run_id }}
+          restore-keys: |
+            seen-posts-
+
       - name: Install dependencies
         run: pip install requests feedparser
 
@@ -24,25 +32,8 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         run: python bot.py
 
-      - name: Zapisz seen_posts.json do repo
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          echo "=== Sprawdzam czy plik istnieje ==="
-          ls -la seen_posts.json || echo "BRAK PLIKU"
-          echo "=== Zawartość ==="
-          cat seen_posts.json || echo "PUSTY"
-          git fetch origin main
-          git checkout origin/main -- seen_posts.json 2>/dev/null || echo "Brak pliku w repo"
-          python -c "
-          import json
-          try:
-              with open('seen_posts.json') as f:
-                  old = set(json.load(f))
-          except:
-              old = set()
-          print('Stare wpisy:', len(old))
-          "
-          git add seen_posts.json
-          git diff --staged --quiet || git commit -m "update seen_posts"
-          git push origin main
+      - name: Zapisz cache seen_posts
+        uses: actions/cache/save@v4
+        with:
+          path: seen_posts.json
+          key: seen-posts-${{ github.run_id }}
