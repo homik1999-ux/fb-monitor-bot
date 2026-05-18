@@ -9,11 +9,11 @@ TOKEN = os.environ["TELEGRAM_TOKEN"]
 CHAT_ID = "8664071476"
 
 RSS_FEEDS = [
-    "https://rss.app/feeds/EYUXQBM0N6GWpF1X.xml",
-    "https://rss.app/feeds/aeBHmOEXiFgcpoRn.xml",
-    "https://rss.app/feeds/2xT8AdXui6fknvR4.xml",
+    "https://rss.app/feeds/CEzYvEfElhyPlDBN.xml",
+    "https://rss.app/feeds/OlCACfDyONBihMRY.xml",
+    "https://rss.app/feeds/NnKJ83U9Z0DvaZUl.xml",
+    "https://rss.app/feeds/VzkoOcFHR7iK0Jys.xml",
 ]
-
 KEYWORDS = [
     "mitsubishi hr", "mitsubishi ap", "mitsubishi ay", "mitsubishi ln",
     "mitsubishi ef", "mitsubishi slz", "mitsubishi mlz", "mitsubishi mfz",
